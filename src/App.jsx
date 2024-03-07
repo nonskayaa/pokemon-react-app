@@ -1,7 +1,7 @@
 import "./App.css";
 import AboutPokemonPage from "./pages/AboutPokemon/AboutPokemonPage";
 import MainPage from "./pages/MainPage/MainPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename={"/pokemon-react-app"}>
+      <HashRouter basename={"/pokemon-react-app"}>
         <Routes>
           <Route index element={<MainPage listPokemons={listPokemons} />} />
           <Route
@@ -26,7 +26,7 @@ function App() {
             element={<AboutPokemonPage listPokemons={listPokemons} />}
           />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
