@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename={"/pokemon-react-app/"}>
+      <BrowserRouter basename={"/pokemon-react-app"}>
         <Routes>
           <Route index element={<MainPage listPokemons={listPokemons} />} />
           <Route
