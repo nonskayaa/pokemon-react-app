@@ -1,0 +1,32 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 40px;
+  background-color: blue;
+  width: 100%;
+  align-items: center;
+  min-height: 120px;
+}
+
+.header__pokeball {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  max-width: 150px;
+  opacity: 40%;
+}
+
+.header__btn_back {
+  background: none;
+  padding: 0;
+}
+
+@media (max-width: 728px) {
+  .header__container {
+    min-height: 70px;
+  }
+  .header__pokeball {
+    max-width: 90px;
+    top: -25px;
+  }
+}
