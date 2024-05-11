@@ -36,7 +36,7 @@
   width: 35px;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
   .search_input__container {
     min-width: 300px;
   }

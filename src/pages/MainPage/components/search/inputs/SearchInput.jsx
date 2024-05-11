@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./SearchInput.module.css";
 import search_loop from "../../../../../assets/images/search_loop.png";
+import { Link } from "react-router-dom";
 
 export default function SearchInput({ value, onChange }) {
   return (
@@ -19,7 +20,9 @@ export default function SearchInput({ value, onChange }) {
           onChange={onChange}
         />
       </div>
-      <button className={classes.search_input__btn}>GO</button>
+      <Link to={`/aboutPokemon/${value}`}>
+        <button className={classes.search_input__btn}>GO</button>
+      </Link>
     </div>
   );
 }

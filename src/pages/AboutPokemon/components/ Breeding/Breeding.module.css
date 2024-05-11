@@ -43,7 +43,7 @@
   text-align: center;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
   .breeding_card__container {
     min-width: 310px;
     width: 90%;
@@ -55,10 +55,10 @@
     padding: 10px;
   }
 
-  .breeding_card__title{
+  .breeding_card__title {
     font-size: 25px;
   }
-  .breeding_card__size_title{
+  .breeding_card__size_title {
     font-size: 15px;
   }
 }

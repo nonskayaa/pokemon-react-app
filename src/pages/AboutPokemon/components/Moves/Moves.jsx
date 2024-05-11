@@ -11,7 +11,7 @@ export default function Moves({ pokemon }) {
       </div>
       <ul className={classes.moves__list}>
         {listMoves?.map((move) => (
-          <MoveTypeCard move={move.move} />
+          <MoveTypeCard move={move.move} key={move.move.name} />
         ))}
       </ul>
     </div>

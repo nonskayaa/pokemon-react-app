@@ -49,7 +49,7 @@
   background-color: red;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 1024px) {
   .pokemon_card {
     padding: 10px;
   }

@@ -55,7 +55,7 @@ export default function InfoCard({ pokemon }) {
               (statName === "speed")
             ) {
               return (
-                <li>
+                <li key={stat.stat.name}>
                   <CharacteristicBar
                     label={stat.stat.name}
                     progressValue={stat.base_stat}

@@ -7,32 +7,35 @@ import Breeding from "./components/ Breeding/Breeding";
 import Moves from "./components/Moves/Moves";
 import Header from "./components/Header/Header";
 import Abilities from "./components/Abilities/Abilities";
+import axios from "axios";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function AboutPokemonPage({ listPokemons }) {
   const { name } = useParams();
-
   const [pokemonInfo, setPokemonInfo] = useState({});
 
-  async function fetchPokemon() {
-    if (listPokemons) {
-      const pokemon = listPokemons.find((pokemon) => pokemon.name === name);
-      const pokemonInfo = await PokemonService.getPokemonInfo(pokemon?.url);
-      setPokemonInfo(pokemonInfo);
-    }
-  }
-
   useEffect(() => {
-    fetchPokemon();
+    const pokemon = listPokemons.find((pokemon) => pokemon.name === name);
+    axios.get(pokemon?.url).then((response) => {
+      const pokemonResponse = response.data;
+      setPokemonInfo(pokemonResponse);
+    });
   }, [listPokemons]);
-
+  console.log(pokemonInfo);
   return (
     <>
       <Header />
       <div className="main_container">
-        <InfoCard pokemon={pokemonInfo} />
-        <Breeding pokemon={pokemonInfo} />
-        <Moves pokemon={pokemonInfo} />
-        <Abilities pokemon={pokemonInfo} />
+        {Object.keys(pokemonInfo).length ? (
+          <>
+            <InfoCard pokemon={pokemonInfo} />
+            <Breeding pokemon={pokemonInfo} />
+            <Moves pokemon={pokemonInfo} />
+            <Abilities pokemon={pokemonInfo} />
+          </>
+        ) : (
+          <NotFound />
+        )}
       </div>
     </>
   );

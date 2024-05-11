@@ -8,7 +8,7 @@ export default function Abilities({ pokemon }) {
       <h2 className={classes.abilities_card__title}>Abilities</h2>
       <div className={classes.abilities_card__items_container}>
         {pokemon?.abilities?.map((ability) => (
-          <AbilityCard ability={ability.ability} />
+          <AbilityCard ability={ability.ability} key={ability.ability.name} />
         ))}
       </div>
     </div>

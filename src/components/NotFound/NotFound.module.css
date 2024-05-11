@@ -1,0 +1,27 @@
+.not_found__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.not_found__image {
+  max-width: 400px;
+}
+.not_found__title {
+  font-size: 40px;
+}
+.not_found__subtitle {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .not_found__image {
+    max-width: 250px;
+  }
+  .not_found__subtitle {
+    font-size: 15px;
+  }
+}

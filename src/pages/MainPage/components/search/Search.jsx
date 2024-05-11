@@ -14,7 +14,7 @@ export default function Search({ searchQuery, setSearchQuery }) {
       <h1 className={classes.search__title}>Who are you looking for?</h1>
       <SearchInput
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
       />
     </div>
   );
